@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>petshop</title>
+</head>
+<body>
+    <h1>🐾PetShop - Δημιουργία Παραγγελίας🐾</h1>
+    <form>
+        <p>🙍‍♂️Όνομα Πελάτη: <input type="text" id="CustomerName"></p>
+        <p>
+            🐶Επιλογή Κατοικιδίου:
+            <br>
+            <input type="radio" name="pet">Σκύλος
+            <br>
+            <input type="radio" name="pet">Γάτα
+        </p>
+        <p>
+            🛒Προϊόντα:
+            <br>
+            <input type="checkbox" name="products" data-name="Τροφή" data-price="12">Τροφή(12€)
+            <br>
+            <input type="checkbox" data-name="Παιχνίδι" data-price="8">Παιχνίδι(8€)
+            <br>
+            <input type="checkbox" data-name="Κρεβάτι" data-price="25">Κρεβάτι(25€)
+        </p>
+        <button type="submit" onclick="submitOrder()">😸Υποβολή Παραγγελίας</button>
+    </form>
+    <script>
+        function submitOrder(){
+            let name = document.getElementById("CustomerName").value;
+            let pet = document.querySelector("input[name='pet']:checked");
+            let selected = document.querySelectorAll("input[name='products']:checked");
+            let productDetails = "";
+            let total = 0;
+
+            selected.forEach(function(item){
+                let product = item.dataset.name;
+                let price = parseFloat(item.dataset.price);
+                productDetails += `•${product}(${price}€)<br>`;
+                total += price;
+            });
+
+            let output=`
+            <h3>📝Αποτελέσματα Παραγγελίας</h3>
+            <b>Όνομα:</b> ${name}<br>
+            <b>Κατοικίδιο:</b> ${pet.value}<br><br>
+            <b>Προϊόντα:</b><br>
+            ${productDetails}
+            <br><b>Σύνολο:</b> €${total.toFixed(2)}
+            `;
+        }
+    </script>
+</body>
+</html>
