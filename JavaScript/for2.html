@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for2</title>
+</head>
+<body>
+    <h1>Δημιουργία Ν τυχαίων αριθμών αριθμών & εύρεση μέγιστου</h1>
+
+    <form>
+        Δώστε τον Ν αριθμό:
+        <br>
+        <input type="number" id="num">
+        <br><br>
+        <button onclick="random()">Υπολογισμός</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        function random(){
+            let num,i,max,apot;
+            apot = 0;
+            max = 0;
+            num = document.getElementById('num').value;
+            let output = document.getElementById("result");
+            parseInt(num);
+
+            for (i = 1; i <= num; i++){
+                apot = Math.random()*100;
+                apot = apot.toFixed(0);
+                document.write(`    ${apot}`)
+                if (apot>max){
+                    max = apot;
+                }
+            }
+            document.write(`<br><br>Ο Μεγαλύτερος από τους <b> ${num}</b> τυχαίους αριθμούς είναι ο: <b>${max}</b>`);
+        }
+    </script>
+</body>
+</html>

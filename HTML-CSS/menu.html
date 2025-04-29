@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+<style>
+.dropmenu{
+	position:relative;
+	display: inline-block;
+}
+
+.dropcont {
+	position: absolute;
+	display:none;
+}
+
+ul {
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+}
+li a{
+	display: block;
+	width:100px;
+	background-color:grey;
+	text-decoration:none;
+}
+
+.dropmenu:hover .dropcont {
+	display:block;
+}
+
+a:hover {
+	background-color:blue;
+	color:white;
+}
+</style>
+</head>
+<body>
+<h1>Παραδειγμα Μενου Πλοηγησης</h1>
+<div class="dropmenu">
+<button>Menu</button>
+<div class="dropcont">
+<ul>
+	<li><a href="#">Αρχικη</a></li>
+	<li><a href="#">Νεα</a></li>
+	<li><a href="#">Υπηρεσιες</a></li>
+	<li><a href="#">Επικοινωνια</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>

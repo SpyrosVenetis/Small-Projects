@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>func1</title>
+</head>
+<body>
+    <h2>Άσκηση Γινόμενο</h2>
+
+    <br>
+    Δώστε τον αριθμό1:<br>
+    <input type="number" id="num1"><br><br>
+    Δώστε τον αριθμό2:<br>
+    <input type="number" id="num2"><br><br>
+    <button onclick="multi()">Υπολογισμός</button>
+
+    <p id="result"></p>
+
+    <script>
+        function multi(){
+            let output=document.getElementById("result");
+            a=document.getElementById('num1').value;
+            b=document.getElementById('num2').value;
+            apot=a*b;
+            output.innerText=`Το γινόμενο των αριθμών ${a} και ${b} είναι ${apot}`;
+        }
+    </script>
+</body>
+</html>

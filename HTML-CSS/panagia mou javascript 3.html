@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javacript par3</title>
+<script>
+function WelcomeUser() {
+	const name = document.getElementById("Username").value;
+	alert("Καλως ηρθες, "+ name + "!");
+}
+</script>
+</head>
+<body>
+<form onsubmit="WelcomeUser(); return false;">
+<p>Username:</p>
+<input type="text" id="Username" name="Username" required>
+<br><br>
+<button type="submit">Υποβολη</button>
+</form>
+</body>
+</html>

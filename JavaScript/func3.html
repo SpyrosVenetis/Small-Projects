@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>func3</title>
+</head>
+<body>
+    Δώστε την ακτήνα του κύκλου:<br>
+    <input type="number" id="r"><br><br>
+    <button onclick="message()">Υπολογισμός</button>
+    <p id="result"></p>
+
+    <script>
+        function message(){
+            let r,output,apot,emv,Pi;
+            output=document.getElementById("result");
+            r=document.getElementById('r').value;
+            r = parseInt(r);
+            emv = Math.PI * r**2;
+            apot=`το εμβαδόν του κύκλου με ακτήνα ${r} είναι ${emv.toFixed(2)}`;
+            output.innerText=apot;
+        }
+    </script>
+</body>
+</html>

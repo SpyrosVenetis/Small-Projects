@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for1</title>
+</head>
+<body>
+    <h2>Υπολογισμός τιμής με ΦΠΑ για Προϊόντα</h2>
+
+    <h3>Συνολική Τιμή με ΦΠΑ:</h3>
+    <p id="totalPrice">0.00</p>
+
+    <script>
+        let apot = 0;
+        let vat = 0.24; //24% ΦΠΑ
+
+        for (let i = 1; i <= 5; i++){
+            let price = parseFloat(prompt(`Δώσε την τιμή του προϊόντος ${i}:`));
+            let discount = parseFloat(prompt(`Δώσε το ποσοστό έκπτωσησς για το προϊόν ${i}(%):`));
+
+            let disprice = price - (price * discount / 100);
+            let final = disprice + (disprice * vat);
+            
+            document.getElementById('')
+
+            apot += final;
+        }
+        document.getElementById('totalPrice').innerHTML=`Το σύνολικό κόστος για όλα τα προϊόντα είναι: ${apot .toFixed(2)}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF=8">
+<title>Javascript par4</title>
+<script>
+function Addition() {
+	const ar1 = parseFloat(document.getElementById("ar1").value);
+	const ar2 = parseFloat(document.getElementById("ar2").value);
+	const apo = ar1 + ar2;
+	document.getElementById("result").innerText = "Αθροισμα: " + apo;
+	return false;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return Addition()">
+<p>Αριθμος1:</p>
+<input type="number" id="ar1"></input>
+<br>
+<p>Αριθος2:</p>
+<input type="number" id="ar2"></input>
+<br><br>
+<button type="submit">Αθροισμα</button>
+</form>
+<p id="result"></p>
+</body>
+</html>

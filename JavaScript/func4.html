@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>func4</title>
+</head>
+<body>
+    <h2>Τυχαίοι Αριθμοί</h2>
+    <p id="rand"></p>
+    <br>
+    <h2>Μεγαλύτερος Αριθμός</h2>
+    <p id="max"></p>
+    <br>
+    <h2>Μικτρότερος Αριθμός</h2>
+    <p id="min"></p>
+    <script>
+        let minres,maxres,randres,min,max;
+        randres = document.getElementById("rand");
+        maxres = document.getElementById("max");
+        minres = document.getElementById("min");
+        randres.innerText = ((Math.random() *100).toFixed(0)) + " " + ((Math.random() *100).toFixed(0)) + " " + ((Math.random() *100).toFixed(0));
+        max = document.getElementById("rand").value;
+        
+    </script>
+</body>
+</html>

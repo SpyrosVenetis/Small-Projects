@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math5</title>
+</head>
+<body>
+    <h1>Υπολογισμός ΦΠΑ Προϊόνος</h1>
+    ΦΠΑ (24%)
+    <form id="form">
+        Δώστε μια τιμή προϊόνος χωρίς ΦΠΑ:
+        <input type="number" id="num">
+        <br>
+        <br>
+        <button type="submit" id="submit">Υπολογισμός</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        let num,val;
+
+        form = document.getElementById('form');
+        output = document.getElementById('result');
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault();
+            num=document.getElementById('num').value;
+            num=parseFloat(num);
+            FPA = (24/100) * num;
+            val = num + FPA;
+            output.innerText = `Η τελική τιμή προϊόντος είναι: ${val}Ευρό με ΦΠΑ: ${FPA}Ευρό`
+        });
+    </script>
+</body>
+</html>

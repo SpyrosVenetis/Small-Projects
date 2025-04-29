@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>func2</title>
+</head>
+<body>
+    <h2>Μήνυμα Ηλικίας</h2>
+    <br>
+    Δώστε το όνομα σου:<br>
+    <input type="text" id="name"><br><br>
+    Δώστε την Ηλικία σου:<br>
+    <input type="number" id="age"><br><br>
+    <button onclick="message()">Υπολογισμός</button>
+    <p id="result"></p>
+
+    <script>
+        function message(){
+            let name,age,apot,output;
+            output=document.getElementById("result");
+            name=document.getElementById('name').value;
+            age=document.getElementById('age').value;
+            apot=`Ο/Η ${name} έχει ηλικία ${age}`;
+            output.innerText=apot;
+        }
+    </script>
+</body>
+</html>

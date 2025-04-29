@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FlexBox</title>
+<style>
+.container {
+	display: flex;
+	flex-direction: row;
+	line-height: 80px;
+	border: solid, 2px, blue;
+	border-radius: 15px;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 500px;
+	height: 700px;
+	background-color:grey;
+	flex-wrap: wrap;
+}
+
+.container div{
+	width: 100px;
+	text-align:center;
+	border-radius: 25px;
+	margin: 20px;
+}
+
+.it1 {
+	background-color:magenta;
+}
+
+.it2 {
+	background-color:cyan;
+}
+
+.it3 {
+	background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="it1">Item1</div>
+<div class="it2">Item2</div>
+<div class="it3">Item3</div>
+<div class="it1">Item4</div>
+<div class="it2">Item5</div>
+<div class="it3">Item6</div>
+<div class="it1">Item7</div>
+<div class="it2">Item8</div>
+<div class="it3">Item9</div>
+</div>
+</body>
+</html>
