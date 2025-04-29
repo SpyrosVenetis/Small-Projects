@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String1</title>
+</head>
+<body>
+    <script>
+        let text = " Η JavaScript είναι υπέροχη! ";
+
+        let length = text.length;
+        let upper = text.toUpperCase();
+        let lower = text.toLowerCase();
+        let trimmed = text.trim();
+        let firstChar = text.charAt(2);
+        let wordExists = text.includes("υπέροχη");
+        let replacedText = text.replace("υπέροχη", "χάλια");
+        let sliced = text.slice(2, 12);
+        let splitWords = text.trim().split(" ");
+
+        document.write(`
+            Αρχικό Κείμενο: "${text}" <br>
+            Μήκος: ${length} <br>
+            Κεφαλαία: ${upper} <br>
+            Πεζά: ${lower} <br>
+            Χωρίς κενά: ${trimmed} <br>
+            Χαρακτήρας στη θέση 2: ${firstChar} <br>
+            Περιέχει "υπέροχο" ${wordExists} <br>
+            Αντικατάσταση λέξης: ${replacedText} <br>
+            Απόσπασμα (slice 2-12): ${sliced} <br>
+            Διαχωρισμός λέξεων: ${splitWords} <br>
+        `)
+    </script>
+</body>
+</html>

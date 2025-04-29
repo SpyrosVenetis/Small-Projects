@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>str2</title>
+</head>
+<body>
+    <form id="form">
+        Όνομα:
+        <input type="text" id="name">
+        <br>
+        <br>
+        Επώνημο:
+        <input type="text" id="lastname">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        let name, lastname, email;
+
+        form = document.getElementById('form');
+        output = document.getElementById('result');
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault();
+            name=document.getElementById('name').value;
+            lastname=document.getElementById('lastname').value;
+            name = name.slice(0,3);
+            lastname = lastname.slice(0,3);
+            name = name.toLowerCase();
+            lastname = lastname.toLowerCase();
+            email=name+lastname+'@inform.com';
+            output.innerText = `το email ειναι: ${email}`;
+        });
+    </script>
+</body>
+</html>

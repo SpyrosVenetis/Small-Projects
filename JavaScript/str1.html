@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>str1</title>
+</head>
+<body>
+    <h1>Μήκος Συμβολοσειράς</h1>
+    <form id="form">
+        Δώστε το κηνιτό σας:
+        <input type="number" id="num">
+        <br>
+        <br>
+        <button type="submit">Υπολογισμός</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        let num;
+
+        form = document.getElementById('form');
+        output = document.getElementById('result');
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault();
+            num=document.getElementById('num').value;
+            apot = num.length;
+            output.innerText = `Το τηλέφωνο που δώσατε έχει ${apot} νούμερα`
+        });
+    </script>
+</body>
+</html>

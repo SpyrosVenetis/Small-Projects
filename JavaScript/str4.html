@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>str4</title>
+</head>
+<body>
+    <form id="form">
+        Δώστε το κείμενο μέσα απο το οποίο θα παραχθεί ο κωδικός:
+        <input type="text" id="pass">
+        <br>
+        <br>
+        <button type="submit">Υπολογισμός</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        let pass,char;
+
+        form = document.getElementById('form');
+        output = document.getElementById('result')
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault();
+            pass = document.getElementById('pass').value;
+            char = pass.length;
+            pass = pass.charAt(0) + pass.charAt(char/2) + pass.charAt(char-1);
+            output.innerText = `Ο κωδικός σας είναι: ${pass}`
+        });
+    </script>
+</body>
+</html>

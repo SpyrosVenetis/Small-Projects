@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pardom2</title>
+</head>
+<body>
+    <img id="image" src="photo1.jpg" alt="πρωτη"><br>
+    <button onclick="changefoto()">Αλλαγή εικόνας</button>
+    <script>
+        function changefoto(){
+            let img = document.getElementById("image");
+            img.setAttribute("src", "photo2.jpg");
+            img.setAttribute("alt", "Δευτερη εικόνα");
+
+            alert(`Η ετικετα ALT ειναι: ${img.getAttribute("alt")}`);
+        }
+    </script>
+</body>
+</html>
