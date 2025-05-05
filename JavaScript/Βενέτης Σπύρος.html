@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βενέτης Σπύρος</title>
+</head>
+<body>
+    <form>
+        Εισόδημα από Μερίσματα: <input type="text" id="Merismata">
+        <br>
+        <br>
+        Εισόδημα από Τόκοι: <input type="text" id="Tokoi">
+        <br>
+        <br>
+        Εισόδημα απο Δικαίωματα: <input type="text" id="Dikaiwmata">
+        <br>
+        <br>
+        <button type="submit" onclick="Iso()">Υπολογισμός</button>
+    </form>
+
+    <p id="thema2"></p>
+    <script>
+        //Θέμα 1ο
+
+        function Iso(){
+            let Mer = document.getElementById("Merismata").value;
+            let Tok = document.getElementById("Tokoi").value;
+            let Dik = document.getElementById("Dikaiwmata").value;
+
+            let MerApo = Mer - (Mer * 5 / 100);
+            let TokApo = Tok - (Tok * 15 / 100);
+            let DikApo = Mer - (Dik * 20 / 100);
+
+            document.write(`
+                Εισόδημα από Μερίσματα: <strong>${MerApo}€</strong> με <strong>5%</strong> Φόρος <br>
+                Εισόδημα από Τόκοι: <strong>${TokApo}€</strong> με <strong>15%</strong> Φόρος <br>
+                Εισόδημα απο Δικαίωματα: <strong>${DikApo}€</strong> με <strong>20%</strong> Φόρος <br>
+            `)
+        }
+
+        //Θέμα 2ο
+        
+        let num = 0;
+
+        for (let i = 1; i <= 100; i++){
+            document.write(`
+                ${i }
+            `)
+        }
+
+        document.write(`<br><br>`)
+        
+        for (i = 1; i <=100; i++){
+            if (i % 5 == 0){
+                document.write(`
+                    ${i }
+                `)
+            }
+        }
+
+        document.write(`<br><br>`)
+        
+        for (i = 100; i >= 1; i--){
+            document.write(`
+                ${i }
+            `)
+        }
+    </script>
+</body>
+</html>
