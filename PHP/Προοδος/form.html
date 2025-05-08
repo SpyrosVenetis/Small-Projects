@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+
+        body{
+            font-size: large;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            border-radius: 10px;
+            padding-top: 5%;
+            width: 30%;
+            height: 400px;
+            display: flex;
+            background-color: rgb(211, 211, 211);
+            margin-top: 5%;
+            margin-left: 35%;
+            flex-direction: column;
+            box-shadow: 0px 20px 20px 5px rgb(109, 109, 109);
+        }
+
+        #submit{
+            background-color: rgb(0, 255, 0);
+            border-radius: 10px;
+            border: solid white 1px;
+        }
+
+        #reset{
+            background-color: rgb(255, 0, 0);
+            border-radius: 10px;
+            border: solid white 1px;
+        }
+
+        #title{
+            text-align: center;
+        }
+
+        .item{
+            width: 50%;
+            height: 25px;
+        }
+
+        #form{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Συμπληρώστε τα στοιχεία για να πάρετε μια προσφορά</h1>
+    <div class="container">
+        <br>
+        <form action="results.php" id="form" method="POST">
+            Όνοματεπώνυνο:
+            <br>
+            <input type="text" class="item" name="name">
+            <br>
+            <br>
+            Ηλικία:
+            <br>
+            <input type="number" class="item" name="age">
+            <br>
+            <br>
+            Πινακίδα Κυκλοφορίας:
+            <br>
+            <input type="text" class="item" name="pin">
+            <br>
+            <br>
+            Κυβικά Κυκλοφορίας(cc):
+            <br>
+            <input type="number" class="item" name="cc">
+            <br>
+            <br>
+            <button type="submit" id="submit" name="submit">Υπολογισμός</button>
+            <button type="reset" id="reset" name="reset">Απαλοιφή</button>
+        </form>
+    </div>
+</body>
+</html>
