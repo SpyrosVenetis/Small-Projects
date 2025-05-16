@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏃‍♂️Πιάσε με αν Μπορείς</h1>
+    <button id="crazyBtn">Δοκίμασε να με πατήσεις</button>
+    <script>
+        let btn = document.getElementById("crazyBtn");
+
+        btn.addEventListener("mouseover", function(){
+            btn.style.position = "absolute";
+            btn.style.left = Math.random() * 80 + "%";
+            btn.style.top = Math.random() * 80 + "%";
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            
+            btn.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+        btn.addEventListener("click", function(){
+            alert("Τα κατάφερες!");
+        });
+    </script>
+</body>
+</html>

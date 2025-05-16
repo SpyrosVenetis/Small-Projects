@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event1</title>
+</head>
+<body>
+    <p id="text">Πάτα το κουμπί για αλλαγή</p>
+    <button onclick="changeText()">Αλλαγή</button>
+    <button onclick="SayHi()">Πες Γεια</button>
+
+    <script>
+        function changeText(){
+            document.getElementById("text").innerText = "Το κείμενο άλλαξε!"
+        }
+        
+        function SayHi(){
+            alert("Καλησπέρα!")
+        }
+    </script>
+</body>
+</html>
