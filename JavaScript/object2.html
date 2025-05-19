@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object2</title>
+</head>
+<body>
+    <h1>Καρτέλα Σπουδαστής</h1>
+    <form>
+        Δώστε το όνομα:<br>
+        <input type="text" id="name">
+        <br><br>
+        Δώστε το επίθετο:<br>
+        <input type="text" id="surname">
+        <br><br>
+        Δώστε το τηλέφωνο:<br>
+        <input type="tel" id="tel">
+        <br><br>
+        Δώστε τον Αριθμό Μητρώου:<br>
+        <input type="text" id="vat">
+        <br><br>
+        <input type="button" onclick="setter()" value="Υπολογισμός">
+        <br><br>
+        <p id="result"></p>
+    </form>
+    <script>
+        function setter(){
+            let name = document.getElementById("name").value;
+            let surname = document.getElementById("surname").value;
+            let tel = document.getElementById("tel").value;
+            let vat = document.getElementById("vat").value;
+        
+
+        let person = {
+            name: name,
+            surname: surname,
+            tel: tel,
+            vat: vat,
+        };
+
+        result.innerText = `Όνομα Σπουδαστή: ${person.name} ${person.surname}
+        Τηλέφωνο: ${person.tel}
+        Αριθμός Μητρώου: ${person.vat}`;
+    }
+    </script>
+</body>
+</html>

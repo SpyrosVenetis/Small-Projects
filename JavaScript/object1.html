@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object1</title>
+</head>
+<body>
+    <h1>Αντικείμενο ορθογώνιο Παραλληλόγραμμο</h1>
+    <form>
+        Δώστε το μήκος του Ορθογώνιου: <br>
+        <input type="number" id="length">
+        <br>
+        <br>
+        Δώστε το πλάτος του Ορθογώνιου: <br>
+        <input type="number" id="width">
+        <br>
+        <br>
+        <input type="button" value="Υπολογισμός" onclick="calc()">
+        <br>
+        <br>
+        <p id="results"></p>
+    </form>
+
+    <script>
+        function calc(){
+            let length = document.getElementById('length').value;
+            length = parseFloat(length);
+            let width = document.getElementById('width').value;
+            width = parseFloat(width);
+
+            let rectangle = {
+                wid: width,
+                len: length,
+                area:function(){return this.len * this.wid;}
+            }
+            apot = rectangle.area();
+            results.innerText = `Το εμβαδόν ορθογωνίου είναι ${apot}`;
+        }
+    </script>
+</body>
+</html>
