@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object4</title>
+</head>
+<body>
+    Δώστε το όνομα προιόντος:<br>
+    <input type="text" id="name"><br><br>
+    Δώστε τιμή:<br>
+    <input type="number" id="price"><br><br>
+    Δώστε Διαθεσιμότητα:<br>
+    <select id="instock"><br>
+        <option value="True">Υπάρχει στην Αποθήκη</option><br>
+        <option value="False">Δεν Υπάρχει στην Αποθήκη</option><br>
+    </select><br><br>
+    <button onclick="prod()">Υπολογισμός</button>
+    <p id="result"></p>
+
+    <script>
+        function prod(){
+            let name, price, instock, pot;
+            let output = document.getElementById("result");
+            name = document.getElementById("name").value;
+            price = document.getElementById("price").value;
+            instock = document.getElementById("instock").value;
+
+            let product = {
+                name: name,
+                price: price,
+                instock: instock
+            };
+
+            apot = `Όνομα Προϊόντος: ${product.name}<br>
+            Τιμή: ${product.price}€<br>
+            Διαθεσιμότητα στην Αποθήκη: ${product.instock}`;
+            output.innerHTML = apot;
+        }
+    </script>
+</body>
+</html>
