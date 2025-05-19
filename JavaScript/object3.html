@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object3</title>
+</head>
+<body>
+    <h1>Καρτέλα Σπουδαστής</h1>
+    <form>
+        Δώστε το όνομα του ζώου:<br>
+        <input type="text" id="name">
+        <br><br>
+        Δώστε το είδος:<br>
+        <input type="text" id="kind">
+        <br><br>
+        Δώστε τον ήχο:<br>
+        <input type="text" id="sound">
+        <br><br>
+        <input type="button" onclick="setter()" value="Υπολογισμός">
+        <br><br>
+        <p id="result"></p>
+    </form>
+    <script>
+        function setter(){
+            let name = document.getElementById("name").value;
+            let kind = document.getElementById("kind").value;
+            let sound = document.getElementById("sound").value;
+        
+
+        let animal = {
+            name: name,
+            kind: kind,
+            sound: sound,
+        };
+
+        result.innerText = `Το ζώο είναι ${animal.name}
+        είδος: ${animal.kind} και κάνει ήχο: ${sound}`;
+    }
+    </script>
+</body>
+</html>
