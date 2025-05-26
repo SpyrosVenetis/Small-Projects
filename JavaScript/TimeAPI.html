@@ -16,26 +16,30 @@
         const output = document.getElementById("result");
         function GetTime(){
             const Country = document.querySelector("input[name='Region']:checked");
-            if (Country == "Greece"){
-                fetch('https://timeapi.io/api/time/current/zone?timeZone=Europe%2FAthens')
+            if (Country.value == "Greece"){
+                fetch('https://script.google.com/macros/s/AKfycbyd5AcbAnWi2Yn0xhFRbyzS4qMq1VucMVgVvhul5XqS9HkAyJY/exec?tz=Europe/Athens')
                 .then(response => response.json())
                 .then(data => {
-                const Time = data.time;
+                const Hour = data.hours;
+                const Minutes = data.minutes;
+                const Seconds = data.seconds;
 
-                output.innerHTML = `${Time.time}`;
+                output.innerHTML = `${Hour}:${Minutes}:${Seconds}`;
             })
             .catch(error => {
             output.innerHTML = `<p> Σφάλμα κατά την ανάκτηση των δεδομένων. Παρακαλώ προσπαθήστε ξανά αργότερα.</p>`;
             });
                 
             }
-            else if (Country == "Italy"){
-                fetch('https://timeapi.io/api/time/current/zone?timeZone=Europe%2FRome')
+            else if (Country.value == "Italy"){
+                fetch('https://script.google.com/macros/s/AKfycbyd5AcbAnWi2Yn0xhFRbyzS4qMq1VucMVgVvhul5XqS9HkAyJY/exec?tz=Europe/Rome')
                 .then(response => response.json())
                 .then(data => {
-                const Time = data.time;
+                const Hour = data.hours;
+                const Minutes = data.minutes;
+                const Seconds = data.seconds;
 
-                output.innerHTML = `${Time.time}`;
+                output.innerHTML = `${Hour}:${Minutes}:${Seconds}`;
             })
             .catch(error => {
             output.innerHTML = `<p> Σφάλμα κατά την ανάκτηση των δεδομένων. Παρακαλώ προσπαθήστε ξανά αργότερα.</p>`;
