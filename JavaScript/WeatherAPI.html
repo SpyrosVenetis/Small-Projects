@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+</head>
+<body>
+    <h1>🌥 Καιρός Αθήνας</h1>
+    <div id="weather">
+        <p>Φορτώνει τα δεδομένα του καίρου...</p>
+    </div>
+
+    <script>
+        //Γεωγραφικές συντεταγμένες για την Αθήνα
+        const latitude = 37.98375031841621;
+        const longitude = 23.72792101971285;
+
+        //Δημιουργια του URL για το Open-Meteo API
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+
+        //Αίτημα fetch για τα δεδομένα καιρού
+        fetch(url)
+        .then(response => response.json()) //Μετατροπή σε JSON
+        .then(data => {
+            const weather = data.current_weather;
+
+            //Προβολή των δεδομένων καιρού στην οθόνη
+            const weatherContainer = document.getElementById('weather');
+            weatherContainer.innerHTML = `
+            <h2>Τρέχων Καιρός</h2>
+            <p>Θερμοκρασία: ${weather.temperature}°C</p>
+            <p>Άνεμος: ${weather.windspeed}km/h</p>
+            <p>Κατέύθυνση ανέμου: ${weather.winddirection}°</p>
+            <p>Υγρασία: ${weather.relative_humidity}%</p>
+            `;
+        })
+        .catch(error => {
+            //Σε περίπτωση σφάλματος, εμφάνιση μηνύματος λάθους
+            const weatherContainer = document.getElementById('weather');
+            weatherContainer.innerHTML = `<p> Σφάλμα κατά την ανάκτηση των δεδομένων καιρού. Παρακαλώ προσπαθήστε ξανά αργότερα.</p>`;
+        });
+    </script>
+</body>
+</html>

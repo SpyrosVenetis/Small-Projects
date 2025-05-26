@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeAPI</title>
+</head>
+<body>
+    <h1>Select a Country</h1>
+        <input type="radio" name="Region" value="Greece">Greece<br>
+        <input type="radio" name="Region" value="Italy">Italy<br><br>
+        <button onclick="GetTime()">Get Time</button>
+        <br>
+        <br>
+        <p id="result"></p>
+    <script>
+        const output = document.getElementById("result");
+        function GetTime(){
+            const Country = document.querySelector("input[name='Region']:checked");
+            if (Country == "Greece"){
+                fetch('https://timeapi.io/api/time/current/zone?timeZone=Europe%2FAthens')
+                .then(response => response.json())
+                .then(data => {
+                const Time = data.time;
+
+                output.innerHTML = `${Time.time}`;
+            })
+            .catch(error => {
+            output.innerHTML = `<p> Σφάλμα κατά την ανάκτηση των δεδομένων. Παρακαλώ προσπαθήστε ξανά αργότερα.</p>`;
+            });
+                
+            }
+            else if (Country == "Italy"){
+                fetch('https://timeapi.io/api/time/current/zone?timeZone=Europe%2FRome')
+                .then(response => response.json())
+                .then(data => {
+                const Time = data.time;
+
+                output.innerHTML = `${Time.time}`;
+            })
+            .catch(error => {
+            output.innerHTML = `<p> Σφάλμα κατά την ανάκτηση των δεδομένων. Παρακαλώ προσπαθήστε ξανά αργότερα.</p>`;
+            });
+            }
+        }
+    </script>
+</body>
+</html>
