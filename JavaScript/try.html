@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try</title>
+</head>
+<body>
+    <script>
+        function divide(x,y){
+            try{
+                if (y===0){
+                    throw new Error("Δεν μπορείς να διαιρέσεις με το 0!");
+                }
+                let result = x / y;
+                document.write(result);
+            }
+            catch (e){
+                document.write("Σφάλμα:", e.message);
+            }
+        }
+        divide(10,0);
+    </script>
+</body>
+</html>

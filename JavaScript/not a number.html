@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaN</title>
+</head>
+<body>
+    Δώσε τον πρώτο αρηθμό:
+    <input type="text" id="num1">
+    <br><br>
+    Δώσε τον δεύτερο αρηθμό:
+    <input type="text" id="num2">
+    <br><br>
+    <button onclick="addNumbers()">Calculate</button>
+    <script>
+        function addNumbers(){
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            try{
+                if (isNaN(a) || isNaN(b)){
+                    throw new Error("Και οι δύο παράμετροι πρέπει να είναι αριθμοί!");
+                }
+                let result = parseInt(a + b);
+                console.log(result);
+            }
+            catch(error){
+                console.error("Σφάλμα:", error.message);
+            }
+        }
+    </script>
+</body>
+</html>

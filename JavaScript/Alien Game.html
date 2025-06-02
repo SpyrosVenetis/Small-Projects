@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Διαστημική Μάχη</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url(https://64.media.tumblr.com/801b3b973da589be8394abce849bff37/147bfebdf112f180-15/s250x400/e57daa0b1c7b827059fb00016834be2bc4f42caa.gifv);
+        }
+        #game {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        }
+        #ship {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 60px;
+        }
+        .bullet {
+        position: absolute;
+        width: 5px;
+        height: 20px;
+        background: red;
+        }
+        .alien {
+        position: absolute;
+        font-size: 50px;
+        animation: fall 5s linear infinite;
+        }
+        #score {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        background: white;
+        padding: 6px 12px;
+        border-radius: 10px;
+        }
+        .shipimg {
+            width: 80px;
+        }
+        @keyframes fall {
+        to {
+        top: 100vh;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="score"> Σκορ: <span id="points">0</span></div>
+    <div id="game">
+        <div id="ship"><img src="https://i.redd.it/fvubakamd1pc1.gif" class="shipimg"></div>
+    </div>
+    <script>
+            const game = document.getElementById("game");
+            const ship = document.getElementById("ship");
+            let shipX = window.innerWidth / 2;
+            let scor = document.getElementById("points");
+            let score = 0;
+            // Κίνηση διαστημόπλοιου με τα βελάκια
+            document.addEventListener("keydown", e => {
+                if (e.key === "a") {
+                    shipX -= 20;
+                }
+                else if (e.key === "d") {
+                    shipX += 20;
+                }
+                // Περιορισμός να μην βγαίνει από την οθόνη
+                shipX = Math.max(0, Math.min(window.innerWidth - 40, shipX));
+                ship.style.left = shipX + "px";
+                // Πυροβολισμός
+                if (e.key === "w") {
+                    shootLaser(shipX); // Στο κέντρο του πλοίου
+                }
+            });
+            // Συνάρτηση λέιζερ
+            function shootLaser(x) {
+                let bullet = document.createElement("div");
+                bullet.className = "bullet";
+                bullet.style.left = x + "px";
+                bullet.style.bottom = "60px";
+                  game.appendChild(bullet);
+                let interval = setInterval(() => {
+                    let current = parseInt(bullet.style.bottom);
+                    if (current > window.innerHeight) {
+                        bullet.remove();
+                        clearInterval(interval);
+                    }
+                else {
+                    bullet.style.bottom = current + 10 + "px";
+                    // Έλεγχος για χτύπημα εξωγήινου
+                    document.querySelectorAll(".alien").forEach(alien => {
+                          let alienRect = alien.getBoundingClientRect();
+                          let bulletRect = bullet.getBoundingClientRect();
+                          if (
+                              bulletRect.left < alienRect .right &&
+                              bulletRect.right > alienRect.left &&
+                              bulletRect.top < alienRect.bottom &&
+                              bulletRect.bottom > alienRect.top ){
+                              alien.remove();
+                              bullet.remove();
+                              clearInterval(interval);
+                              score++;
+                              scor.textContent = score;
+                          }
+                      });
+                  }
+                  }, 20);
+             }
+             // Δημιουργία εξωγήινων που πέφτουν
+                 function spawnAlien() {
+                 let alien = document.createElement("div");
+                 alien.className = "alien";
+                 alien.innerHTML = '<img src="https://i.gifer.com/origin/24/2432cf5ff737ad7d1794a29d042eb02e_w200.gif" class="shipimg">';
+                 alien.style.left = Math.random() * (window.innerWidth - 30) + "px";
+                 alien.style.top = "0px";
+                 game.appendChild(alien);
+                 // Έλεγχος για χτύπημα Διαστημοπλοίου
+                 document.querySelectorAll(".alien").forEach(alien => {
+                     let alienRect = alien.getBoundingClientRect();
+                     let shipRect = ship.getBoundingClientRect();
+                     if (
+                         shipRect.left < alienRect .right &&
+                         shipRect.right > alienRect.left &&
+                         shipRect.top < alienRect.bottom &&
+                     shipRect.bottom > alienRect.top ){
+                         alien.remove();
+                         score--;
+                         scor.textContent = score;
+                     }
+                     11
+                 });
+                 // Αφαίρεση όταν φτάσουν κάτω
+                 setTimeout(() => {
+                     if (game.contains(alien)) alien.remove();
+                 }, 5000);
+             }
+             // Κάθε 1.5 δευτερόλεπτο πέφτει νέος εξωγήινος
+             setInterval(spawnAlien, 1500);
+             </script>
+    </body>
+</html>
