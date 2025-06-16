@@ -28,7 +28,7 @@ else {
     echo "<!DOCTYPE html>";
     echo "<html>";
     echo "<head>";
-    echo'<link rel="stylesheet" type="text/css" href="style.css">';
+    echo'<link rel="stylesheet" href="style.css">';
     echo "<meta charset='UTF-8'>";
     echo "</head>";
     echo "<body>";
