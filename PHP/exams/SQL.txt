@@ -1,0 +1,9 @@
+CREATE TABLE students(
+	id int(6) AUTO_INCREMENT,
+   	name char(16) NOT NULL,
+    	surname char(16) NOT NULL,
+    	birthdate date NOT NULL,
+    	gender char(10),
+    	department char(20),
+    	PRIMARY KEY (id)
+);
