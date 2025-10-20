@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class Main
+public class MiniCalc
 {
-	public static void MiniCalc(String[] args) {
+	public static void Main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		double num1 = input.nextDouble();
 		input.nextLine();
